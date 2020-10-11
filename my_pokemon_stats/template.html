@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>My Pokemon Stats</title>
+</head>
+<body>
+
+<header id="header">
+    <div class="container text-center">
+        <h1 class="pt-5 pb-1 font-weight-bold">
+            My Pokemon Stats
+        </h1>
+        <hr>
+        <p class="pt-2">
+            This is a site I use to store the stats of all my Pokemon.
+        </p>
+    </div>
+</header>
+
+<section id="pokemon_table">
+    <div class="container py-4">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type 1</th>
+                    <th scope="col">Type 2</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">HP</th>
+                    <th scope="col">Attack</th>
+                    <th scope="col">Defense</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row["Name"] }}</td>
+                    <td>{{ row["Type 1"] }}</td>
+                    <td>{{ row["Type 2"] }}</td>
+                    <td>{{ row["Total"] }}</td>
+                    <td>{{ row["HP"] }}</td>
+                    <td>{{ row["Attack"] }}</td>
+                    <td>{{ row["Defense"] }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
