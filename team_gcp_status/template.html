@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>GCP Status</title>
+</head>
+<body>
+
+<header id="header">
+    <div class="container text-center">
+        <h1 class="pt-5 pb-1 font-weight-bold">
+            Iron Mountain GCP Completion Status
+        </h1>
+        <hr>
+        <p class="pt-2">
+            Iron Mountain GCP completion status
+        </p>
+    </div>
+</header>
+
+<section id="gcp_status_table">
+    <div class="container py-4">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">03-Apr</th>
+                    <th scope="col">10-Apr</th>
+                    <th scope="col">17-Apr</th>
+                    <th scope="col">24-Apr</th>
+                    <th scope="col">01-May</th>
+                    <th scope="col">08-May</th>
+                    <th scope="col">15-May</th>
+                    <th scope="col">24-May</th>
+                    <th scope="col">29-May</th>
+                    <th scope="col">05-Jun</th>
+                    <th scope="col">12-Jun</th>
+                    <th scope="col">19-Jun</th>
+                    <th scope="col">26-Jun</th>
+                    <th scope="col">30-Jun</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row["Name"] }}</td>
+                    <td>{{ row["03-Apr"] }}</td>
+                    <td>{{ row["10-Apr"] }}</td>
+                    <td>{{ row["17-Apr"] }}</td>
+                    <td>{{ row["24-Apr"] }}</td>
+                    <td>{{ row["01-May"] }}</td>
+                    <td>{{ row["08-May"] }}</td>
+                    <td>{{ row["15-May"] }}</td>
+                    <td>{{ row["22-May"] }}</td>
+                    <td>{{ row["29-May"] }}</td>
+                    <td>{{ row["05-Jun"] }}</td>
+                    <td>{{ row["12-Jun"] }}</td>
+                    <td>{{ row["19-Jun"] }}</td>
+                    <td>{{ row["26-Jun"] }}</td>
+                    <td>{{ row["30-Jun"] }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<div class="container py-4" id="date">
+  <p><small>@status updated as of {{ date }}</small></p>
+</div>
+
+</body>
+</html>
